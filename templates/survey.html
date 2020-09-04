@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        {% if  message %}
+            {{ message }}
+        {% endif %}
+        <div>
+            <form style="width: auto; border: brown" action="{% url 'survey:survey' %}" method="post">{% csrf_token %}
+                <table style=" text-align: left">
+                    {{ surveyform.as_p}}
+                </table>
+                <input align="center" style="margin:0 0 15px 40%; height:35px;alignment: center" type="submit" value="Submit Survey">
+            </form>
+        </div>
+
+
+
+
+{% endblock %}

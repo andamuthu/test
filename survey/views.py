@@ -3,7 +3,7 @@ from survey.forms import *
 from survey.models import *
 
 
-def survey(request):
+def survey(request):----
     if request.method == 'GET':
         form = SurveyForm()
         return render(request, 'survey.html', {'surveyform': form})

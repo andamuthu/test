@@ -5,13 +5,8 @@ from survey.models import *
 
 def survey(request):
     if request.method == 'GET':
-<<<<<<< HEAD
-        survey_form = SurveyForm()
-        return render(request, 'survey.html', {'surveyform': survey_form})
-=======
         surveyform = SurveyForm()
         return render(request, 'survey.html', locals())
->>>>>>> d80cc4a23bedce4c7312db1658880de02cfed9e3
     elif request.method == 'POST':
         form = SurveyForm(request.POST)
         print(form.__dict__)
@@ -55,9 +50,5 @@ def survey(request):
             form = SurveyForm()
             return render(request, "survey.html", {'message': message, 'surveyform': form})
         else:
-<<<<<<< HEAD
-            message = 'Please fix below errors'
-=======
             message = 'Please correct the below mentioned errors'
->>>>>>> d80cc4a23bedce4c7312db1658880de02cfed9e3
             return render(request, "survey.html", {'message': message, 'surveyform': form})

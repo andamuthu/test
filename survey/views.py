@@ -3,7 +3,7 @@ from survey.forms import *
 from survey.models import *
 
 
-def survey(request):5th commit
+def survey(request):
     if request.method == 'GET':
 <<<<<<< HEAD
         survey_form = SurveyForm()

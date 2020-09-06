@@ -5,8 +5,8 @@ from survey.models import *
 
 def survey(request):5th commit
     if request.method == 'GET':
-        form = SurveyForm()
-        return render(request, 'survey.html', {'surveyform': form})
+        survey_form = SurveyForm()
+        return render(request, 'survey.html', {'surveyform': survey_form})
     elif request.method == 'POST':
         form = SurveyForm(request.POST)
         print(form.__dict__)
@@ -45,10 +45,10 @@ def survey(request):5th commit
                                                   political_affiliation=political_affiliation,
                                                   Kids=Kids, Smoker=Smoker)
             submit_survey.save()
-            message = '" {} " survey is submitted successfully'.format(Profile_Name)
+            message = '" {} " survey has been submitted successfully'.format(Profile_Name)
             # message = 'survey is submitted successfully'
             form = SurveyForm()
             return render(request, "survey.html", {'message': message, 'surveyform': form})
         else:
-            message = 'Please correct below errors'
+            message = 'Please fix below errors'
             return render(request, "survey.html", {'message': message, 'surveyform': form})

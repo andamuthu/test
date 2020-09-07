@@ -2,7 +2,7 @@ from django.shortcuts import render
 from survey.forms import *
 from survey.models import *
 
-this is form branch to master
+#this is form muthu branch
 def survey(request):
     if request.method == 'GET':
         surveyform = SurveyForm()
